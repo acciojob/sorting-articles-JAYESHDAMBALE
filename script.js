@@ -25,7 +25,7 @@ bands.sort(function(a,b) {
 	return 0;
 })
 
-const ul = document.getElementById("band");
+const ul = document.getElementById("bands");
 
 for (let index = 0; index < bands.length; index++) {
 	const li = document.createElement("li");
