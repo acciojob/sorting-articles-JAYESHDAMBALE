@@ -4,7 +4,7 @@ const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'N
 function removeArticles(name) {
 	name = name.toLowerCase();
 
-	if(name.startsWith("the")){
+	if(name.startsWith("the ")){
 		return name.slice(4);
 	}else if (name.startsWith("a")) {
 		return name.slice(2);
@@ -20,7 +20,7 @@ bands.sort(function(a,b) {
 	const nameB = removeArticles(b);
 
 	if(nameA < nameB) return -1;
-	if(nameA > nameB) return -1;
+	if(nameA > nameB) return 1;
 
 	return 0;
 })
@@ -28,7 +28,8 @@ bands.sort(function(a,b) {
 const ul = document.getElementById("band");
 
 for (let index = 0; index < bands.length; index++) {
-	const li = document.getElementById("li");
-	li.textContent = bands[i];
+	const li = document.createElement("li");
+
+	li.textContent = bands[index];
 	ul.appendChild(li);
 }
