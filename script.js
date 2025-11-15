@@ -6,24 +6,24 @@ function removeArticles(name) {
 
 	if(name.startsWith("the ")){
 		return name.slice(4);
-	}else if (name.startsWith("a")) {
+	}else if (name.startsWith("a ")) {
 		return name.slice(2);
-	}else if (name.startsWith("an")) {
+	}else if (name.startsWith("an ")) {
 		return name.slice(3);
 	}
 
 	return name;
 }
 
-bands.sort(function(a,b) {
-	const nameA = removeArticles(a);
-	const nameB = removeArticles(b);
+bands.sort(function(a, b) {
+    const nameA = removeArticles(a);
+    const nameB = removeArticles(b);
 
-	if(nameA < nameB) return -1;
-	if(nameA > nameB) return 1;
-
-	return 0;
-})
+    if (nameA < nameB) return -1;
+    if (nameA > nameB) return 1;
+    return 0;
+});
+ 
 
 const ul = document.getElementById("bands");
 
